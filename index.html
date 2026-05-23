@@ -4,131 +4,128 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google-site-verification" content="QGKjMBDfNfRbF6mlgud5Rf3-s29rAzv4v_aVhH2tL2w" />
-    <title>FRIDAY AI - Free Intelligent AI Assistant Online</title>
-    <meta name="description" content="FRIDAY AI is a fast, free, and easy-to-use AI assistant. Chat, code, brainstorm, learn, and boost your productivity instantly. No sign-up needed.">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-
+    <title>FRIDAY AI - Free Intelligent AI Assistant</title>
+    <meta name="description" content="FRIDAY AI - The fast, free, and truly intelligent AI assistant. Chat, code, create, and achieve more every day.">
+    
     <style>
         :root {
             --primary: #3b82f6;
             --dark: #0f172a;
-            --card: #1e2937;
+            --accent: #60a5fa;
         }
         * { margin: 0; padding: 0; box-sizing: border-box; }
+        
         body {
-            font-family: 'Segoe UI', system-ui, sans-serif;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
             background: var(--dark);
             color: white;
-            line-height: 1.6;
+            line-height: 1.65;
         }
+        
         header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 5%;
-            background: rgba(15, 23, 42, 0.95);
+            padding: 24px 6%;
+            background: rgba(15, 23, 42, 0.98);
             position: sticky;
             top: 0;
             z-index: 100;
-            backdrop-filter: blur(10px);
+            backdrop-filter: blur(16px);
         }
         .logo {
-            font-size: 1.85rem;
+            font-size: 2.25rem;
             font-weight: 800;
-            letter-spacing: -1px;
+            letter-spacing: -2px;
+            background: linear-gradient(90deg, #60a5fa, #3b82f6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
         nav a {
-            margin-left: 28px;
+            margin-left: 32px;
             color: #cbd5f5;
             text-decoration: none;
             font-weight: 500;
-            transition: 0.3s;
+            transition: color 0.3s;
         }
         nav a:hover { color: white; }
 
-        .marquee {
-            background: #1e2937;
-            padding: 12px 0;
-            overflow: hidden;
-            white-space: nowrap;
-            font-size: 0.95rem;
-        }
-        .marquee span {
-            display: inline-block;
-            padding-left: 100%;
-            animation: scroll 22s linear infinite;
-        }
-        @keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-100%); } }
-
         .hero {
             text-align: center;
-            padding: 110px 20px 90px;
+            padding: 140px 20px 110px;
             background: linear-gradient(135deg, #1e2937 0%, #0f172a 100%);
         }
         .hero h1 {
-            font-size: 3.4rem;
-            margin-bottom: 18px;
-            line-height: 1.1;
+            font-size: 3.8rem;
+            line-height: 1.05;
+            margin-bottom: 24px;
+            font-weight: 700;
         }
         .hero p {
-            font-size: 1.25rem;
-            color: #cbd5f5;
-            max-width: 680px;
-            margin: 0 auto 35px;
+            font-size: 1.45rem;
+            color: #e2e8f0;
+            max-width: 760px;
+            margin: 0 auto 45px;
+            font-weight: 400;
         }
         .btn {
             display: inline-block;
-            padding: 16px 36px;
+            padding: 18px 48px;
             background: var(--primary);
             color: white;
-            text-decoration: none;
-            border-radius: 50px;
-            font-size: 1.15rem;
+            font-size: 1.3rem;
             font-weight: 600;
-            transition: all 0.3s;
+            text-decoration: none;
+            border-radius: 60px;
+            transition: all 0.4s ease;
+            box-shadow: 0 8px 25px rgba(59, 130, 246, 0.3);
         }
         .btn:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 15px 25px rgba(59, 130, 246, 0.4);
+            transform: translateY(-6px);
+            box-shadow: 0 20px 35px rgba(59, 130, 246, 0.4);
+            background: #2563eb;
         }
 
         .section {
-            padding: 80px 5%;
+            padding: 100px 6%;
             text-align: center;
-            max-width: 1200px;
+            max-width: 1250px;
             margin: auto;
         }
         .section h2 {
-            font-size: 2.3rem;
-            margin-bottom: 20px;
+            font-size: 2.6rem;
+            margin-bottom: 55px;
+            font-weight: 700;
         }
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 24px;
-            margin-top: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+            gap: 32px;
         }
         .card {
-            background: var(--card);
-            padding: 32px 24px;
-            border-radius: 16px;
-            transition: all 0.3s;
+            background: #1e2937;
+            padding: 40px 28px;
+            border-radius: 20px;
+            transition: all 0.4s ease;
         }
         .card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            transform: translateY(-15px);
+            background: #25344a;
         }
-        .card i {
-            font-size: 2.8rem;
-            margin-bottom: 18px;
-            color: var(--primary);
+        .card h3 {
+            font-size: 1.5rem;
+            margin: 20px 0 14px;
+        }
+        .card p {
+            color: #cbd5f5;
         }
 
         footer {
             background: #020617;
-            padding: 50px 20px 30px;
+            padding: 70px 20px 40px;
             text-align: center;
             color: #94a3b8;
+            font-size: 1.05rem;
         }
     </style>
 </head>
@@ -144,54 +141,43 @@
         </nav>
     </header>
 
-    <div class="marquee">
-        <span>🚀 Blazing Fast Responses • 💬 Smart Conversations • 🧠 Helpful Memory • 💻 Coding Expert • 📝 Productivity Booster • 🌐 Works on Any Device • Free Forever</span>
-    </div>
-
     <section class="hero">
-        <h1>Meet FRIDAY AI</h1>
-        <p>Your free, fast, and intelligent AI assistant. Ask anything, get instant help — whether it's coding, learning, brainstorming, or daily tasks.</p>
+        <h1>Intelligence That Works For You</h1>
+        <p>Fast, free, and genuinely helpful AI assistant.<br>
+        Built for real conversations, coding, learning, and daily productivity.</p>
         <a href="https://fridayaiavanu458.streamlit.app" target="_blank" class="btn">
-            <i class="fas fa-rocket"></i> Try FRIDAY AI Now
+            Try FRIDAY AI Now — 100% Free
         </a>
-        <p style="margin-top: 20px; color: #94a3b8; font-size: 1.05rem;">
-            No sign-up • Completely Free • Instant Access
-        </p>
     </section>
 
     <section class="section">
-        <h2>✨ What You Can Do With FRIDAY AI</h2>
+        <h2>Powerful. Simple. Yours.</h2>
         <div class="grid">
             <div class="card">
-                <i class="fas fa-comments"></i>
-                <h3>Smart Chat</h3>
-                <p>Have natural conversations and get helpful answers instantly.</p>
+                <h3>💬 Natural Conversations</h3>
+                <p>Talk like a human. Get thoughtful, accurate, and useful responses.</p>
             </div>
             <div class="card">
-                <i class="fas fa-code"></i>
-                <h3>Coding Help</h3>
-                <p>Debug, write, and understand code across multiple languages.</p>
+                <h3>💻 Smart Coding Partner</h3>
+                <p>Write better code, fix bugs faster, and learn programming effectively.</p>
             </div>
             <div class="card">
-                <i class="fas fa-lightbulb"></i>
-                <h3>Brainstorm Ideas</h3>
-                <p>Generate creative ideas, plans, and solutions on demand.</p>
+                <h3>🧠 Creative Brainstorming</h3>
+                <p>Generate ideas, plans, and solutions whenever you need them.</p>
             </div>
             <div class="card">
-                <i class="fas fa-book"></i>
-                <h3>Learn Faster</h3>
-                <p>Understand complex topics and learn new skills quickly.</p>
+                <h3>📚 Learn with Clarity</h3>
+                <p>Understand any topic faster with clear explanations.</p>
             </div>
             <div class="card">
-                <i class="fas fa-tasks"></i>
-                <h3>Boost Productivity</h3>
-                <p>Write emails, summarize, organize tasks, and more.</p>
+                <h3>⚡ Daily Productivity</h3>
+                <p>Write, summarize, organize, and accomplish more in less time.</p>
             </div>
         </div>
     </section>
 
     <footer>
-        <p>© 2026 FRIDAY AI • Made by Shaurya Anjney </p>
+        <p>Made by Shaurya Anjney © 2026 FRIDAY AI</p>
     </footer>
 
 </body>
