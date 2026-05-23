@@ -3,37 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vision - FRIDAY AI | Making AI Simple & Accessible</title>
-    <meta name="description" content="Learn the vision behind FRIDAY AI — a simple, fast, and powerful free AI assistant designed for real people and everyday use.">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-
+    <title>Vision - FRIDAY AI</title>
+    <meta name="description" content="The vision behind FRIDAY AI — making powerful artificial intelligence simple, fast, and accessible to everyone.">
+    
     <style>
         :root {
             --primary: #3b82f6;
             --dark: #0f172a;
-            --card: #1e2937;
         }
         * { margin: 0; padding: 0; box-sizing: border-box; }
+        
         body {
-            font-family: 'Segoe UI', system-ui, sans-serif;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
             background: var(--dark);
             color: white;
             line-height: 1.7;
         }
+        
         header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 5%;
-            background: rgba(15, 23, 42, 0.95);
+            padding: 24px 6%;
+            background: rgba(15, 23, 42, 0.98);
             position: sticky;
             top: 0;
             z-index: 100;
-            backdrop-filter: blur(10px);
+            backdrop-filter: blur(16px);
         }
-        .logo { font-size: 1.85rem; font-weight: 800; letter-spacing: -1px; }
+        .logo {
+            font-size: 2.25rem;
+            font-weight: 800;
+            letter-spacing: -2px;
+            background: linear-gradient(90deg, #60a5fa, #3b82f6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
         nav a {
-            margin-left: 28px;
+            margin-left: 32px;
             color: #cbd5f5;
             text-decoration: none;
             font-weight: 500;
@@ -42,49 +49,64 @@
 
         .hero {
             text-align: center;
-            padding: 100px 20px 70px;
+            padding: 130px 20px 90px;
             background: linear-gradient(135deg, #1e2937 0%, #0f172a 100%);
         }
         .hero h1 {
-            font-size: 2.9rem;
-            margin-bottom: 20px;
+            font-size: 3.4rem;
+            margin-bottom: 22px;
         }
         .hero p {
-            font-size: 1.25rem;
-            color: #cbd5f5;
-            max-width: 720px;
+            font-size: 1.4rem;
+            color: #e2e8f0;
+            max-width: 750px;
             margin: 0 auto;
+        }
+        .btn {
+            display: inline-block;
+            margin-top: 40px;
+            padding: 17px 45px;
+            background: var(--primary);
+            color: white;
+            font-size: 1.25rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 60px;
+            transition: all 0.4s;
+        }
+        .btn:hover {
+            background: #2563eb;
+            transform: translateY(-5px);
         }
 
         .section {
-            padding: 70px 5%;
-            max-width: 1000px;
+            padding: 90px 6%;
+            max-width: 1100px;
             margin: auto;
             text-align: center;
         }
         .section h2 {
-            font-size: 2.1rem;
-            margin-bottom: 22px;
-            color: white;
+            font-size: 2.3rem;
+            margin-bottom: 28px;
         }
         .section p {
+            font-size: 1.15rem;
             color: #cbd5f5;
-            font-size: 1.1rem;
             max-width: 780px;
-            margin: 0 auto 25px;
+            margin: 0 auto 35px;
         }
 
         .highlight {
-            background: var(--card);
-            padding: 35px;
-            border-radius: 16px;
-            margin: 40px auto;
-            max-width: 800px;
+            background: #1e2937;
+            padding: 45px 40px;
+            border-radius: 20px;
+            margin: 60px auto;
+            max-width: 900px;
         }
 
         footer {
             background: #020617;
-            padding: 50px 20px 30px;
+            padding: 70px 20px 40px;
             text-align: center;
             color: #94a3b8;
         }
@@ -104,38 +126,45 @@
 
     <section class="hero">
         <h1>Our Vision</h1>
-        <p>Making powerful AI simple, fast, and available to everyone — without complexity or barriers.</p>
+        <p>Making powerful AI simple, fast, and accessible to everyone — without complexity or barriers.</p>
+        <a href="https://fridayaiavanu458.streamlit.app" target="_blank" class="btn">
+            Try FRIDAY AI Now — It's Free
+        </a>
     </section>
 
     <section class="section">
         <h2>🎯 Our Mission</h2>
         <p>
-            FRIDAY AI was created with one clear goal: to build an AI assistant that is genuinely useful in everyday life. 
-            We believe AI should help people learn faster, work smarter, and solve problems — without needing to read complicated manuals or deal with bloated interfaces.
+            We believe artificial intelligence should be a helpful everyday tool, not a complicated toy. 
+            FRIDAY AI was built to deliver fast, intelligent, and practical assistance to students, developers, 
+            professionals, and anyone who wants to get things done more efficiently.
         </p>
     </section>
 
     <div class="highlight">
-        <h2>🔥 What Makes FRIDAY AI Different</h2>
+        <h2>🔥 What Makes Us Different</h2>
         <p>
-            While many AI tools focus on adding more features, we focus on doing the basics extremely well — speed, clarity, and reliability. 
-            No unnecessary complexity. Just a clean, fast, and intelligent assistant you can use instantly.
+            While most AI tools try to offer everything, we focus on doing the essentials extremely well. 
+            Speed, reliability, clean interface, and genuinely useful responses — these are our top priorities. 
+            No bloated features. No confusion. Just a smart assistant that works when you need it.
         </p>
     </div>
 
     <section class="section">
-        <h2>🚀 Real-World Purpose</h2>
+        <h2>🚀 Real Purpose</h2>
         <p>
-            Whether you're a student learning new concepts, a developer writing code, a professional brainstorming ideas, 
-            or someone who just needs quick answers — FRIDAY AI adapts to your needs and delivers helpful responses every time.
+            FRIDAY AI is designed for real-world use. Whether you want to understand a difficult topic, 
+            write better code, brainstorm ideas for a project, improve your productivity, or just get quick 
+            and honest answers — we built this AI to adapt to your needs.
         </p>
     </section>
 
     <section class="section">
-        <h2>🔮 Looking Ahead</h2>
+        <h2>🔮 Future Direction</h2>
         <p>
-            We are committed to continuously improving FRIDAY AI — making it smarter, faster, and more helpful while 
-            keeping the experience simple and accessible. Our long-term vision is to become a daily companion that users can truly rely on.
+            We are committed to continuously improving FRIDAY AI — making it smarter, faster, and more 
+            intuitive while keeping the experience simple. Our long-term goal is to become a dependable 
+            daily AI companion that millions of people can trust and rely on.
         </p>
     </section>
 
