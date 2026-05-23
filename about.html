@@ -1,120 +1,147 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vision - FRIDAY AI | Making AI Simple & Accessible</title>
+    <meta name="description" content="Learn the vision behind FRIDAY AI — a simple, fast, and powerful free AI assistant designed for real people and everyday use.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 
-<title>FRIDAY AI Vision</title>
+    <style>
+        :root {
+            --primary: #3b82f6;
+            --dark: #0f172a;
+            --card: #1e2937;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            background: var(--dark);
+            color: white;
+            line-height: 1.7;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            background: rgba(15, 23, 42, 0.95);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+        }
+        .logo { font-size: 1.85rem; font-weight: 800; letter-spacing: -1px; }
+        nav a {
+            margin-left: 28px;
+            color: #cbd5f5;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        nav a:hover { color: white; }
 
-<style>
-body {margin:0;font-family:'Segoe UI',sans-serif;background:#0f172a;color:white;}
-header {display:flex;justify-content:space-between;padding:20px 40px;background:#020617;}
-nav a {margin-left:20px;color:#cbd5f5;text-decoration:none;}
-nav a:hover {color:white;}
+        .hero {
+            text-align: center;
+            padding: 100px 20px 70px;
+            background: linear-gradient(135deg, #1e2937 0%, #0f172a 100%);
+        }
+        .hero h1 {
+            font-size: 2.9rem;
+            margin-bottom: 20px;
+        }
+        .hero p {
+            font-size: 1.25rem;
+            color: #cbd5f5;
+            max-width: 720px;
+            margin: 0 auto;
+        }
 
-.section {max-width:900px;margin:auto;padding:60px 20px;text-align:center;}
-.section p {color:#cbd5f5;margin-top:15px;}
+        .section {
+            padding: 70px 5%;
+            max-width: 1000px;
+            margin: auto;
+            text-align: center;
+        }
+        .section h2 {
+            font-size: 2.1rem;
+            margin-bottom: 22px;
+            color: white;
+        }
+        .section p {
+            color: #cbd5f5;
+            font-size: 1.1rem;
+            max-width: 780px;
+            margin: 0 auto 25px;
+        }
 
-.btn {display:inline-block;margin-top:20px;padding:14px 25px;background:#3b82f6;color:white;text-decoration:none;border-radius:8px;}
+        .highlight {
+            background: var(--card);
+            padding: 35px;
+            border-radius: 16px;
+            margin: 40px auto;
+            max-width: 800px;
+        }
 
-footer {background:#020617;padding:30px;text-align:center;color:#94a3b8;}
-</style>
+        footer {
+            background: #020617;
+            padding: 50px 20px 30px;
+            text-align: center;
+            color: #94a3b8;
+        }
+    </style>
 </head>
-
 <body>
 
-<header>
-<h2>FRIDAY AI</h2>
-<nav>
-<a href="index.html">Home</a>
-<a href="about.html">Vision</a>
-<a href="blog.html">Blog</a>
-<a href="privacy.html">Privacy</a>
-</nav>
-</header>
+    <header>
+        <h2 class="logo">FRIDAY AI</h2>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">Vision</a>
+            <a href="blog.html">Blog</a>
+            <a href="privacy.html">Privacy</a>
+        </nav>
+    </header>
 
-<section class="section">
-<h1>Vision Behind FRIDAY AI</h1>
+    <section class="hero">
+        <h1>Our Vision</h1>
+        <p>Making powerful AI simple, fast, and available to everyone — without complexity or barriers.</p>
+    </section>
 
-<p>FRIDAY AI is built to make artificial intelligence simple, fast, and accessible.</p>
+    <section class="section">
+        <h2>🎯 Our Mission</h2>
+        <p>
+            FRIDAY AI was created with one clear goal: to build an AI assistant that is genuinely useful in everyday life. 
+            We believe AI should help people learn faster, work smarter, and solve problems — without needing to read complicated manuals or deal with bloated interfaces.
+        </p>
+    </section>
 
-<p>It allows users to interact with AI for solving problems, learning, and productivity without complexity.</p>
+    <div class="highlight">
+        <h2>🔥 What Makes FRIDAY AI Different</h2>
+        <p>
+            While many AI tools focus on adding more features, we focus on doing the basics extremely well — speed, clarity, and reliability. 
+            No unnecessary complexity. Just a clean, fast, and intelligent assistant you can use instantly.
+        </p>
+    </div>
 
-<a href="https://fridayaiavanu458.streamlit.app" target="_blank" class="btn">
-Try FRIDAY AI 🚀
-</a>
+    <section class="section">
+        <h2>🚀 Real-World Purpose</h2>
+        <p>
+            Whether you're a student learning new concepts, a developer writing code, a professional brainstorming ideas, 
+            or someone who just needs quick answers — FRIDAY AI adapts to your needs and delivers helpful responses every time.
+        </p>
+    </section>
 
-<p style="margin-top:10px;color:#94a3b8;">Free to use • Instant access</p>
-</section>
+    <section class="section">
+        <h2>🔮 Looking Ahead</h2>
+        <p>
+            We are committed to continuously improving FRIDAY AI — making it smarter, faster, and more helpful while 
+            keeping the experience simple and accessible. Our long-term vision is to become a daily companion that users can truly rely on.
+        </p>
+    </section>
 
-<!-- NEW: MISSION -->
-<section class="section">
-<h2>🎯 Our Mission</h2>
-
-<p>
-The mission of FRIDAY AI is to provide a fast, reliable, and easy-to-use AI assistant that helps people solve problems, learn new things, and improve productivity without barriers.
-</p>
-
-<p>
-As AI continues to evolve, the focus is on keeping the experience simple while still delivering powerful capabilities to users across different needs and use cases.
-</p>
-</section>
-
-<!-- NEW: WHAT MAKES IT DIFFERENT -->
-<section class="section">
-<h2>🔥 What Makes FRIDAY AI Different</h2>
-
-<p>
-FRIDAY AI is designed with a minimal and user-first approach. Instead of overwhelming users with features, it focuses on delivering what actually matters — speed, clarity, and usability.
-</p>
-
-<p>
-The platform removes unnecessary complexity so users can focus directly on getting answers, solving problems, and exploring ideas.
-</p>
-</section>
-
-<!-- NEW: USE CASE VISION -->
-<section class="section">
-<h2>🚀 Real World Usage</h2>
-
-<p>
-FRIDAY AI is not limited to one type of user. It can be used for general questions, coding help, idea generation, productivity tasks, and much more.
-</p>
-
-<p>
-The goal is to create a tool that adapts to different situations and provides meaningful assistance instantly.
-</p>
-</section>
-
-<!-- NEW: FUTURE -->
-<section class="section">
-<h2>🔮 Future Direction</h2>
-
-<p>
-FRIDAY AI will continue to improve in speed, intelligence, and user experience. Future updates may include better personalization, enhanced memory, and more advanced interaction capabilities.
-</p>
-
-<p>
-The long-term vision is to make FRIDAY AI a dependable assistant that users can rely on daily.
-</p>
-</section>
-
-<!-- NEW: PHILOSOPHY -->
-<section class="section">
-<h2>💡 Core Philosophy</h2>
-
-<p>
-Technology should simplify life, not complicate it. FRIDAY AI is built on the belief that powerful tools should remain easy to use.
-</p>
-
-<p>
-By keeping the interface clean and the experience direct, the platform ensures that users can focus on results rather than learning how to use the tool.
-</p>
-</section>
-
-<footer>
-<p>© 2026 FRIDAY AI</p>
-</footer>
+    <footer>
+        <p>Made by Shaurya Anjney © 2026 FRIDAY AI</p>
+    </footer>
 
 </body>
 </html>
