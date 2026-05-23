@@ -1,134 +1,198 @@
 <!DOCTYPE html>
-<html lang="en"> 
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="google-site-verification" content="QGKjMBDfNfRbF6mlgud5Rf3-s29rAzv4v_aVhH2tL2w" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="QGKjMBDfNfRbF6mlgud5Rf3-s29rAzv4v_aVhH2tL2w" />
+    <title>FRIDAY AI - Free Intelligent AI Assistant Online</title>
+    <meta name="description" content="FRIDAY AI is a fast, free, and easy-to-use AI assistant. Chat, code, brainstorm, learn, and boost your productivity instantly. No sign-up needed.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 
-<title>FRIDAY AI - Free AI Assistant Online</title>
+    <style>
+        :root {
+            --primary: #3b82f6;
+            --dark: #0f172a;
+            --card: #1e2937;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            background: var(--dark);
+            color: white;
+            line-height: 1.6;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            background: rgba(15, 23, 42, 0.95);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+        }
+        .logo {
+            font-size: 1.85rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+        }
+        nav a {
+            margin-left: 28px;
+            color: #cbd5f5;
+            text-decoration: none;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+        nav a:hover { color: white; }
 
-<meta name="description" content="FRIDAY AI is a free AI assistant for chatting, coding, productivity, and everyday tasks. Try it instantly online.">
+        .marquee {
+            background: #1e2937;
+            padding: 12px 0;
+            overflow: hidden;
+            white-space: nowrap;
+            font-size: 0.95rem;
+        }
+        .marquee span {
+            display: inline-block;
+            padding-left: 100%;
+            animation: scroll 22s linear infinite;
+        }
+        @keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-100%); } }
 
-<style>
-body {margin:0;font-family:'Segoe UI',sans-serif;background:#0f172a;color:white;}
-header {display:flex;justify-content:space-between;padding:20px 40px;background:#020617;}
-nav a {margin-left:20px;color:#cbd5f5;text-decoration:none;}
-nav a:hover {color:white;}
+        .hero {
+            text-align: center;
+            padding: 110px 20px 90px;
+            background: linear-gradient(135deg, #1e2937 0%, #0f172a 100%);
+        }
+        .hero h1 {
+            font-size: 3.4rem;
+            margin-bottom: 18px;
+            line-height: 1.1;
+        }
+        .hero p {
+            font-size: 1.25rem;
+            color: #cbd5f5;
+            max-width: 680px;
+            margin: 0 auto 35px;
+        }
+        .btn {
+            display: inline-block;
+            padding: 16px 36px;
+            background: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.15rem;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        .btn:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 15px 25px rgba(59, 130, 246, 0.4);
+        }
 
-.marquee {background:#1e293b;padding:10px;overflow:hidden;white-space:nowrap;}
-.marquee span {display:inline-block;padding-left:100%;animation:scroll 15s linear infinite;}
-@keyframes scroll {0%{transform:translateX(0);}100%{transform:translateX(-100%);}}
+        .section {
+            padding: 80px 5%;
+            text-align: center;
+            max-width: 1200px;
+            margin: auto;
+        }
+        .section h2 {
+            font-size: 2.3rem;
+            margin-bottom: 20px;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 24px;
+            margin-top: 40px;
+        }
+        .card {
+            background: var(--card);
+            padding: 32px 24px;
+            border-radius: 16px;
+            transition: all 0.3s;
+        }
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        .card i {
+            font-size: 2.8rem;
+            margin-bottom: 18px;
+            color: var(--primary);
+        }
 
-.hero {text-align:center;padding:80px 20px;}
-.hero h1 {font-size:3rem;}
-.hero p {color:#cbd5f5;max-width:600px;margin:auto;}
-
-.btn {display:inline-block;margin-top:20px;padding:14px 25px;background:#3b82f6;color:white;text-decoration:none;border-radius:8px;}
-
-.section {padding:60px 20px;text-align:center;max-width:1000px;margin:auto;}
-.grid {display:flex;flex-wrap:wrap;justify-content:center;}
-.card {background:#1e293b;padding:20px;margin:10px;border-radius:10px;width:250px;}
-
-footer {background:#020617;padding:30px;text-align:center;color:#94a3b8;}
-</style>
+        footer {
+            background: #020617;
+            padding: 50px 20px 30px;
+            text-align: center;
+            color: #94a3b8;
+        }
+    </style>
 </head>
-
 <body>
 
-<header>
-<h2>FRIDAY AI</h2>
-<nav>
-<a href="index.html">Home</a>
-<a href="about.html">Vision</a>
-<a href="blog.html">Blog</a>
-<a href="privacy.html">Privacy</a>
-</nav>
-</header>
+    <header>
+        <h2 class="logo">FRIDAY AI</h2>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">Vision</a>
+            <a href="blog.html">Blog</a>
+            <a href="privacy.html">Privacy</a>
+        </nav>
+    </header>
 
-<div class="marquee">
-<span>🚀 Fast AI • 💬 Smart Chat • 🧠 Memory • 💻 Coding Help • 🌐 Works Everywhere • Contact: hajimenakamura184@gmail.com</span>
-</div>
+    <div class="marquee">
+        <span>🚀 Blazing Fast Responses • 💬 Smart Conversations • 🧠 Helpful Memory • 💻 Coding Expert • 📝 Productivity Booster • 🌐 Works on Any Device • Free Forever</span>
+    </div>
 
-<section class="hero">
-<h1>FRIDAY AI — Free AI Assistant Online 🤖</h1>
-<p>Ask anything, get instant answers. Use AI for chatting, coding, productivity, and everyday tasks.</p>
+    <section class="hero">
+        <h1>Meet FRIDAY AI</h1>
+        <p>Your free, fast, and intelligent AI assistant. Ask anything, get instant help — whether it's coding, learning, brainstorming, or daily tasks.</p>
+        <a href="https://fridayaiavanu458.streamlit.app" target="_blank" class="btn">
+            <i class="fas fa-rocket"></i> Try FRIDAY AI Now
+        </a>
+        <p style="margin-top: 20px; color: #94a3b8; font-size: 1.05rem;">
+            No sign-up • Completely Free • Instant Access
+        </p>
+    </section>
 
-<a href="https://fridayaiavanu458.streamlit.app" target="_blank" class="btn">
-Try FRIDAY AI Now 🚀
-</a>
+    <section class="section">
+        <h2>✨ What You Can Do With FRIDAY AI</h2>
+        <div class="grid">
+            <div class="card">
+                <i class="fas fa-comments"></i>
+                <h3>Smart Chat</h3>
+                <p>Have natural conversations and get helpful answers instantly.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-code"></i>
+                <h3>Coding Help</h3>
+                <p>Debug, write, and understand code across multiple languages.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-lightbulb"></i>
+                <h3>Brainstorm Ideas</h3>
+                <p>Generate creative ideas, plans, and solutions on demand.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-book"></i>
+                <h3>Learn Faster</h3>
+                <p>Understand complex topics and learn new skills quickly.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-tasks"></i>
+                <h3>Boost Productivity</h3>
+                <p>Write emails, summarize, organize tasks, and more.</p>
+            </div>
+        </div>
+    </section>
 
-<p style="margin-top:10px;color:#94a3b8;">Free to use • Instant access</p>
-</section>
-
-<section class="section">
-<h2>✨ What You Can Do</h2>
-<div class="grid">
-<div class="card">💬 Chat with AI anytime</div>
-<div class="card">🧠 Get smart answers instantly</div>
-<div class="card">⚡ Fast responses</div>
-<div class="card">💻 Solve coding problems</div>
-<div class="card">🌐 Use on any device</div>
-</div>
-</section>
-
-<!-- NEW SECTION: USE CASES -->
-<section class="section">
-<h2>🚀 How People Use FRIDAY AI</h2>
-<p>
-FRIDAY AI is designed for real-world usage. Whether you're exploring new ideas, solving problems, or just curious, this AI assistant adapts to your needs.
-</p>
-
-<div class="grid">
-<div class="card">📚 Learning new concepts quickly</div>
-<div class="card">💻 Debugging and writing code</div>
-<div class="card">🧠 Brainstorming ideas</div>
-<div class="card">⚡ Getting instant answers</div>
-<div class="card">📝 Writing and productivity tasks</div>
-</div>
-</section>
-
-<!-- NEW SECTION: WHY -->
-<section class="section">
-<h2>🔥 Why Choose FRIDAY AI?</h2>
-<p>
-FRIDAY AI focuses on simplicity, speed, and accessibility. Unlike complex AI tools, it provides a clean and direct experience where users can immediately start interacting without confusion.
-</p>
-
-<p>
-The goal is to remove friction and make AI useful in everyday situations — whether you're solving a problem, learning something new, or experimenting with ideas.
-</p>
-</section>
-
-<!-- NEW SECTION: SEO CONTENT -->
-<section class="section">
-<h2>🌐 Free AI Assistant for Everyday Tasks</h2>
-<p>
-FRIDAY AI is a powerful and free AI assistant that helps users with a wide range of tasks including chatting, coding, productivity, and general problem solving. It is built to be fast, responsive, and easy to use on any device.
-</p>
-
-<p>
-As artificial intelligence becomes more important, tools like FRIDAY AI aim to make access simple and practical. You can ask questions, explore topics, generate ideas, and solve technical problems — all in one place.
-</p>
-</section>
-
-<!-- NEW SECTION: FAQ -->
-<section class="section">
-<h2>❓ Frequently Asked Questions</h2>
-
-<p><strong>What is FRIDAY AI?</strong><br>
-FRIDAY AI is an online AI assistant designed to help with tasks like chatting, coding, and productivity.</p>
-
-<p><strong>Is FRIDAY AI free?</strong><br>
-Yes, FRIDAY AI is accessible online and designed to be freely usable.</p>
-
-<p><strong>What can I use it for?</strong><br>
-You can use it for learning, coding help, answering questions, and everyday tasks.</p>
-
-</section>
-
-<footer>
-<p>© 2026 FRIDAY AI</p>
-</footer>
+    <footer>
+        <p>© 2026 FRIDAY AI • Made with ❤️ for fast and simple AI experience</p>
+    </footer>
 
 </body>
 </html>
