@@ -1,105 +1,160 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - FRIDAY AI | AI Insights & Productivity Tips</title>
+    <meta name="description" content="Read practical articles about AI assistants, coding help, productivity hacks, and how to get the most out of AI tools like FRIDAY AI.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 
-<title>FRIDAY AI Blog</title>
+    <style>
+        :root {
+            --primary: #3b82f6;
+            --dark: #0f172a;
+            --card: #1e2937;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            background: var(--dark);
+            color: white;
+            line-height: 1.6;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            background: rgba(15, 23, 42, 0.95);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+        }
+        .logo { font-size: 1.85rem; font-weight: 800; letter-spacing: -1px; }
+        nav a {
+            margin-left: 28px;
+            color: #cbd5f5;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        nav a:hover { color: white; }
 
-<meta name="description" content="FRIDAY AI blog covering AI assistants, coding help, productivity tools, and how AI is transforming everyday tasks.">
-<meta name="keywords" content="AI assistant, free AI tools, AI for coding, productivity AI, chatbot online, AI blog">
+        .hero {
+            text-align: center;
+            padding: 90px 20px 60px;
+            background: linear-gradient(135deg, #1e2937 0%, #0f172a 100%);
+        }
+        .hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            color: #cbd5f5;
+            max-width: 700px;
+            margin: 0 auto;
+        }
 
-<style>
-body {margin:0;font-family:'Segoe UI',sans-serif;background:#0f172a;color:white;}
-header {display:flex;justify-content:space-between;padding:20px 40px;background:#020617;}
-nav a {margin-left:20px;color:#cbd5f5;text-decoration:none;}
-nav a:hover {color:white;}
+        .section {
+            padding: 60px 5%;
+            max-width: 1100px;
+            margin: auto;
+        }
+        .article-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 28px;
+            margin-top: 40px;
+        }
+        .article-card {
+            background: var(--card);
+            border-radius: 16px;
+            padding: 28px;
+            transition: all 0.3s;
+        }
+        .article-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+        }
+        .article-card h3 {
+            margin: 15px 0 12px;
+            font-size: 1.35rem;
+            line-height: 1.3;
+        }
+        .article-card p {
+            color: #cbd5f5;
+            font-size: 1rem;
+        }
+        .read-more {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 15px;
+            display: inline-block;
+        }
+        .read-more:hover { text-decoration: underline; }
 
-.article {max-width:800px;margin:auto;padding:40px 20px;}
-.article p {color:#cbd5f5;margin-top:10px;line-height:1.6;}
-
-.btn {display:inline-block;margin-top:20px;padding:14px 25px;background:#3b82f6;color:white;text-decoration:none;border-radius:8px;}
-
-footer {background:#020617;padding:30px;text-align:center;color:#94a3b8;}
-</style>
+        footer {
+            background: #020617;
+            padding: 50px 20px 30px;
+            text-align: center;
+            color: #94a3b8;
+        }
+    </style>
 </head>
-
 <body>
 
-<header>
-<h2>FRIDAY AI</h2>
-<nav>
-<a href="index.html">Home</a>
-<a href="about.html">Vision</a>
-</nav>
-</header>
+    <header>
+        <h2 class="logo">FRIDAY AI</h2>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">Vision</a>
+            <a href="blog.html">Blog</a>
+            <a href="privacy.html">Privacy</a>
+        </nav>
+    </header>
 
-<div class="article">
+    <section class="hero">
+        <h1>FRIDAY AI Blog</h1>
+        <p>Practical insights, tips, and guides about AI, productivity, coding, and how to make the most of intelligent tools.</p>
+    </section>
 
-<h1>FRIDAY AI Blog</h1>
+    <section class="section">
+        <h2 style="text-align:center; margin-bottom: 40px;">Latest Articles</h2>
+        
+        <div class="article-grid">
 
-<p>
-Welcome to the FRIDAY AI blog — a place to explore how artificial intelligence is transforming the way people work, learn, and solve problems. This blog focuses on practical use of AI tools, productivity improvements, and real-world applications.
-</p>
+            <div class="article-card">
+                <h3>What is an AI Assistant and Why You Need One in 2026</h3>
+                <p>Discover how modern AI assistants like FRIDAY AI are changing the way we work, learn, and solve problems every day.</p>
+                <a href="#" class="read-more">Read Article →</a>
+            </div>
 
-<h2>What is an AI Assistant?</h2>
-<p>
-An AI assistant is a tool powered by artificial intelligence that helps users perform tasks such as answering questions, generating ideas, solving problems, and automating workflows. Modern AI assistants are capable of understanding natural language and providing meaningful responses instantly.
-</p>
+            <div class="article-card">
+                <h3>How to Use AI for Faster Coding & Debugging</h3>
+                <p>Learn practical ways FRIDAY AI can help you write better code, fix bugs quickly, and boost your development speed.</p>
+                <a href="#" class="read-more">Read Article →</a>
+            </div>
 
-<p>
-With the rise of AI tools, users can now access powerful capabilities directly through simple interfaces. Whether it’s learning something new or solving a technical issue, AI assistants reduce effort and save time.
-</p>
+            <div class="article-card">
+                <h3>10 Ways FRIDAY AI Can Boost Your Daily Productivity</h3>
+                <p>From writing emails to brainstorming ideas — real examples of how people are using FRIDAY AI to get more done.</p>
+                <a href="#" class="read-more">Read Article →</a>
+            </div>
 
-<h2>How AI Helps in Coding</h2>
-<p>
-AI has become a powerful companion for developers. It can help debug code, explain complex programming concepts, and even generate solutions for problems. This significantly speeds up development and improves efficiency.
-</p>
+            <div class="article-card">
+                <h3>The Future of AI Assistants: What’s Coming Next?</h3>
+                <p>Our vision for how AI tools will evolve and how FRIDAY AI plans to stay ahead while keeping things simple.</p>
+                <a href="#" class="read-more">Read Article →</a>
+            </div>
 
-<p>
-From beginners learning programming to experienced developers working on advanced systems, AI tools provide assistance that enhances productivity and reduces friction in the development process.
-</p>
+        </div>
+    </section>
 
-<h2>AI for Productivity and Everyday Tasks</h2>
-<p>
-AI assistants are not limited to coding. They can be used for writing, brainstorming ideas, organizing tasks, and answering everyday questions. This makes them useful for a wide range of users across different needs.
-</p>
-
-<p>
-The ability to get instant responses and guidance allows users to focus more on execution rather than spending time searching for information.
-</p>
-
-<h2>Why FRIDAY AI?</h2>
-<p>
-FRIDAY AI is built with a focus on simplicity, speed, and accessibility. It provides a clean and direct interface where users can start interacting immediately without unnecessary complexity.
-</p>
-
-<p>
-The goal is to create an AI assistant that is useful in real-world scenarios — whether it's learning, coding, productivity, or general problem-solving.
-</p>
-
-<a href="https://fridayaiavanu458.streamlit.app" target="_blank" class="btn">
-Try FRIDAY AI 🚀
-</a>
-
-<p style="margin-top:10px;color:#94a3b8;">
-Experience a fast and simple AI assistant designed for everyday use.
-</p>
-
-<h2>Future of AI Assistants</h2>
-<p>
-Artificial intelligence is evolving rapidly, and AI assistants are becoming more capable over time. Future improvements will focus on better understanding, faster responses, and more personalized interactions.
-</p>
-
-<p>
-Tools like FRIDAY AI aim to stay at the forefront by continuously improving user experience and expanding capabilities while maintaining simplicity.
-</p>
-
-</div>
-
-<footer>
-<p>© 2026 FRIDAY AI</p>
-</footer>
+    <footer>
+        <p>© 2026 FRIDAY AI • Made  for fast and simple AI experience</p>
+    </footer>
 
 </body>
 </html>
