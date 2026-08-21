@@ -9,113 +9,264 @@
     <style>
         :root {
             --primary: #3b82f6;
-            --dark: #0f172a;
+            --primary-glow: rgba(59, 130, 246, 0.45);
+            --bg: #070b14;
+            --card: rgba(17, 24, 39, 0.7);
+            --border: rgba(148, 163, 184, 0.1);
+            --text: #f1f5f9;
+            --muted: #94a3b8;
         }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
-            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-            background: var(--dark);
-            color: white;
+            font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: var(--bg);
+            color: var(--text);
             line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
         }
-        
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: -15%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 900px;
+            height: 600px;
+            background: radial-gradient(circle, var(--primary-glow) 0%, transparent 70%);
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0.5;
+        }
+
+        /* Header */
         header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 24px 6%;
-            background: rgba(15, 23, 42, 0.98);
+            padding: 18px 6%;
+            background: rgba(7, 11, 20, 0.75);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border-bottom: 1px solid var(--border);
             position: sticky;
             top: 0;
             z-index: 100;
-            backdrop-filter: blur(16px);
         }
+
         .logo {
-            font-size: 2.25rem;
+            font-size: 1.7rem;
             font-weight: 800;
-            letter-spacing: -2px;
-            background: linear-gradient(90deg, #60a5fa, #3b82f6);
+            letter-spacing: -1.5px;
+            background: linear-gradient(135deg, #93c5fd, #3b82f6, #1d4ed8);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-decoration: none;
+            transition: opacity 0.25s ease;
         }
+
+        .logo:hover {
+            opacity: 0.85;
+        }
+
+        nav {
+            display: flex;
+            gap: 6px;
+        }
+
         nav a {
-            margin-left: 32px;
-            color: #cbd5f5;
+            color: var(--muted);
             text-decoration: none;
             font-weight: 500;
+            font-size: 0.95rem;
+            padding: 8px 18px;
+            border-radius: 999px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
-        nav a:hover { color: white; }
 
+        nav a:hover {
+            color: white;
+            background: rgba(59, 130, 246, 0.15);
+            box-shadow: 0 0 20px rgba(59, 130, 246, 0.15);
+        }
+
+        /* Hero */
         .hero {
             text-align: center;
-            padding: 130px 20px 90px;
-            background: linear-gradient(135deg, #1e2937 0%, #0f172a 100%);
+            padding: 120px 20px 80px;
+            position: relative;
+            z-index: 1;
         }
+
         .hero h1 {
-            font-size: 3.4rem;
-            margin-bottom: 22px;
+            font-size: clamp(2.7rem, 5.5vw, 3.7rem);
+            font-weight: 800;
+            letter-spacing: -2px;
+            margin-bottom: 20px;
+            background: linear-gradient(to bottom, #ffffff 30%, #94a3b8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: fadeUp 0.8s ease-out;
         }
+
         .hero p {
-            font-size: 1.4rem;
-            color: #e2e8f0;
-            max-width: 750px;
-            margin: 0 auto;
-        }
-        .btn {
-            display: inline-block;
-            margin-top: 40px;
-            padding: 17px 45px;
-            background: var(--primary);
-            color: white;
             font-size: 1.25rem;
+            color: var(--muted);
+            max-width: 680px;
+            margin: 0 auto 40px;
+            line-height: 1.65;
+            animation: fadeUp 0.8s ease-out 0.15s both;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            padding: 16px 38px;
+            background: linear-gradient(135deg, #3b82f6, #2563eb);
+            color: white;
+            font-size: 1.15rem;
             font-weight: 600;
             text-decoration: none;
-            border-radius: 60px;
-            transition: all 0.4s;
+            border-radius: 999px;
+            transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 10px 30px rgba(59, 130, 246, 0.35);
+            animation: fadeUp 0.8s ease-out 0.3s both;
         }
+
         .btn:hover {
-            background: #2563eb;
-            transform: translateY(-5px);
+            transform: translateY(-5px) scale(1.03);
+            box-shadow: 0 20px 40px rgba(59, 130, 246, 0.45);
         }
 
+        /* Content Sections */
         .section {
-            padding: 90px 6%;
-            max-width: 1100px;
-            margin: auto;
-            text-align: center;
-        }
-        .section h2 {
-            font-size: 2.3rem;
-            margin-bottom: 28px;
-        }
-        .section p {
-            font-size: 1.15rem;
-            color: #cbd5f5;
-            max-width: 780px;
-            margin: 0 auto 35px;
-        }
-
-        .highlight {
-            background: #1e2937;
-            padding: 45px 40px;
-            border-radius: 20px;
-            margin: 60px auto;
+            padding: 70px 6%;
             max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            z-index: 1;
         }
 
+        .section h2 {
+            font-size: 1.9rem;
+            font-weight: 800;
+            letter-spacing: -0.8px;
+            margin-bottom: 22px;
+            color: white;
+        }
+
+        .section p {
+            font-size: 1.12rem;
+            color: var(--muted);
+            max-width: 720px;
+            margin: 0 auto;
+            line-height: 1.75;
+        }
+
+        /* Highlight Card */
+        .highlight {
+            background: var(--card);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(59, 130, 246, 0.15);
+            border-radius: 24px;
+            padding: 50px 45px;
+            margin: 40px auto;
+            max-width: 860px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.4);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .highlight:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 25px 50px -12px rgba(59, 130, 246, 0.18);
+        }
+
+        .highlight::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.5), transparent);
+        }
+
+        .highlight h2 {
+            margin-bottom: 20px;
+        }
+
+        /* Footer */
         footer {
             background: #020617;
-            padding: 70px 20px 40px;
+            border-top: 1px solid var(--border);
+            padding: 40px 20px;
             text-align: center;
-            color: #94a3b8;
+            color: #64748b;
+            font-size: 0.95rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(24px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 14px 5%;
+                flex-direction: column;
+                gap: 14px;
+            }
+
+            nav {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            nav a {
+                padding: 7px 14px;
+                font-size: 0.9rem;
+            }
+
+            .hero {
+                padding: 90px 20px 60px;
+            }
+
+            .section {
+                padding: 50px 20px;
+            }
+
+            .highlight {
+                padding: 36px 24px;
+                margin: 30px 20px;
+            }
         }
     </style>
 </head>
 <body>
-
     <header>
-        <h2 class="logo">FRIDAY AI</h2>
+        <a href="index.html" class="logo">FRIDAY AI</a>
+        
         <nav>
             <a href="index.html">Home</a>
             <a href="about.html">Vision</a>
@@ -135,8 +286,8 @@
     <section class="section">
         <h2>🎯 Our Mission</h2>
         <p>
-            We believe artificial intelligence should be a helpful everyday tool, not a complicated toy. 
-            FRIDAY AI was built to deliver fast, intelligent, and practical assistance to students, developers, 
+            We believe artificial intelligence should be a helpful everyday tool, not a complicated toy.
+            FRIDAY AI was built to deliver fast, intelligent, and practical assistance to students, developers,
             professionals, and anyone who wants to get things done more efficiently.
         </p>
     </section>
@@ -144,8 +295,8 @@
     <div class="highlight">
         <h2>🔥 What Makes Us Different</h2>
         <p>
-            While most AI tools try to offer everything, we focus on doing the essentials extremely well. 
-            Speed, reliability, clean interface, and genuinely useful responses — these are our top priorities. 
+            While most AI tools try to offer everything, we focus on doing the essentials extremely well.
+            Speed, reliability, clean interface, and genuinely useful responses — these are our top priorities.
             No bloated features. No confusion. Just a smart assistant that works when you need it.
         </p>
     </div>
@@ -153,8 +304,8 @@
     <section class="section">
         <h2>🚀 Real Purpose</h2>
         <p>
-            FRIDAY AI is designed for real-world use. Whether you want to understand a difficult topic, 
-            write better code, brainstorm ideas for a project, improve your productivity, or just get quick 
+            FRIDAY AI is designed for real-world use. Whether you want to understand a difficult topic,
+            write better code, brainstorm ideas for a project, improve your productivity, or just get quick
             and honest answers — we built this AI to adapt to your needs.
         </p>
     </section>
@@ -162,8 +313,8 @@
     <section class="section">
         <h2>🔮 Future Direction</h2>
         <p>
-            We are committed to continuously improving FRIDAY AI — making it smarter, faster, and more 
-            intuitive while keeping the experience simple. Our long-term goal is to become a dependable 
+            We are committed to continuously improving FRIDAY AI — making it smarter, faster, and more
+            intuitive while keeping the experience simple. Our long-term goal is to become a dependable
             daily AI companion that millions of people can trust and rely on.
         </p>
     </section>
@@ -171,6 +322,5 @@
     <footer>
         <p>Made by Shaurya Anjney © 2026 FRIDAY AI</p>
     </footer>
-
 </body>
 </html>
