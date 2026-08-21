@@ -10,129 +10,301 @@
     <style>
         :root {
             --primary: #3b82f6;
-            --dark: #0f172a;
-            --accent: #60a5fa;
+            --primary-glow: rgba(59, 130, 246, 0.45);
+            --bg: #070b14;
+            --card: rgba(17, 24, 39, 0.7);
+            --border: rgba(148, 163, 184, 0.1);
+            --text: #f1f5f9;
+            --muted: #94a3b8;
         }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
-            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-            background: var(--dark);
-            color: white;
-            line-height: 1.65;
+            font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
         }
-        
+
+        /* Soft background glow */
+        body::before {
+            content: '';
+            position: fixed;
+            top: -15%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 1000px;
+            height: 700px;
+            background: radial-gradient(circle, var(--primary-glow) 0%, transparent 70%);
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0.55;
+        }
+
+        /* Header */
         header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 24px 6%;
-            background: rgba(15, 23, 42, 0.98);
+            padding: 18px 6%;
+            background: rgba(7, 11, 20, 0.75);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border-bottom: 1px solid var(--border);
             position: sticky;
             top: 0;
             z-index: 100;
-            backdrop-filter: blur(16px);
         }
+
         .logo {
-            font-size: 2.25rem;
+            font-size: 1.7rem;
             font-weight: 800;
-            letter-spacing: -2px;
-            background: linear-gradient(90deg, #60a5fa, #3b82f6);
+            letter-spacing: -1.5px;
+            background: linear-gradient(135deg, #93c5fd, #3b82f6, #1d4ed8);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
+
+        nav {
+            display: flex;
+            gap: 6px;
+        }
+
         nav a {
-            margin-left: 32px;
-            color: #cbd5f5;
+            color: var(--muted);
             text-decoration: none;
             font-weight: 500;
-            transition: color 0.3s;
+            font-size: 0.95rem;
+            padding: 8px 18px;
+            border-radius: 999px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
-        nav a:hover { color: white; }
 
+        nav a:hover {
+            color: white;
+            background: rgba(59, 130, 246, 0.15);
+            box-shadow: 0 0 20px rgba(59, 130, 246, 0.15);
+        }
+
+        /* Hero */
         .hero {
             text-align: center;
-            padding: 140px 20px 110px;
-            background: linear-gradient(135deg, #1e2937 0%, #0f172a 100%);
+            padding: 130px 20px 100px;
+            position: relative;
+            z-index: 1;
         }
+
         .hero h1 {
-            font-size: 3.8rem;
-            line-height: 1.05;
+            font-size: clamp(2.8rem, 6.5vw, 4.2rem);
+            font-weight: 800;
+            letter-spacing: -2.5px;
+            line-height: 1.1;
             margin-bottom: 24px;
-            font-weight: 700;
+            background: linear-gradient(to bottom, #ffffff 25%, #94a3b8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: fadeUp 0.8s ease-out;
         }
+
         .hero p {
-            font-size: 1.45rem;
-            color: #e2e8f0;
-            max-width: 760px;
+            font-size: 1.3rem;
+            color: var(--muted);
+            max-width: 680px;
             margin: 0 auto 45px;
             font-weight: 400;
+            line-height: 1.6;
+            animation: fadeUp 0.8s ease-out 0.15s both;
         }
+
         .btn {
-            display: inline-block;
-            padding: 18px 48px;
-            background: var(--primary);
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 18px 42px;
+            background: linear-gradient(135deg, #3b82f6, #2563eb);
             color: white;
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             font-weight: 600;
             text-decoration: none;
-            border-radius: 60px;
-            transition: all 0.4s ease;
-            box-shadow: 0 8px 25px rgba(59, 130, 246, 0.3);
-        }
-        .btn:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 20px 35px rgba(59, 130, 246, 0.4);
-            background: #2563eb;
+            border-radius: 999px;
+            transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 10px 30px rgba(59, 130, 246, 0.35);
+            animation: fadeUp 0.8s ease-out 0.3s both;
+            position: relative;
+            overflow: hidden;
         }
 
+        .btn:hover {
+            transform: translateY(-5px) scale(1.03);
+            box-shadow: 0 20px 40px rgba(59, 130, 246, 0.45);
+        }
+
+        .btn::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, transparent, rgba(255,255,255,0.15), transparent);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .btn:hover::after {
+            opacity: 1;
+        }
+
+        /* Features Section */
         .section {
-            padding: 100px 6%;
+            padding: 60px 6% 120px;
             text-align: center;
-            max-width: 1250px;
-            margin: auto;
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
         }
+
         .section h2 {
-            font-size: 2.6rem;
-            margin-bottom: 55px;
-            font-weight: 700;
+            font-size: clamp(2rem, 4vw, 2.7rem);
+            font-weight: 800;
+            letter-spacing: -1.2px;
+            margin-bottom: 60px;
+            background: linear-gradient(to right, #f8fafc, #94a3b8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
+
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
-            gap: 32px;
-        }
-        .card {
-            background: #1e2937;
-            padding: 40px 28px;
-            border-radius: 20px;
-            transition: all 0.4s ease;
-        }
-        .card:hover {
-            transform: translateY(-15px);
-            background: #25344a;
-        }
-        .card h3 {
-            font-size: 1.5rem;
-            margin: 20px 0 14px;
-        }
-        .card p {
-            color: #cbd5f5;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 28px;
         }
 
+        .card {
+            background: var(--card);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(59, 130, 246, 0.12);
+            border-radius: 20px;
+            padding: 36px 28px;
+            transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            text-align: left;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.4), transparent);
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(59, 130, 246, 0.3);
+            box-shadow: 0 25px 50px -12px rgba(59, 130, 246, 0.18);
+        }
+
+        .card .icon {
+            font-size: 1.9rem;
+            margin-bottom: 18px;
+            display: inline-block;
+        }
+
+        .card h3 {
+            font-size: 1.35rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: white;
+            letter-spacing: -0.3px;
+        }
+
+        .card p {
+            color: var(--muted);
+            font-size: 1.02rem;
+            line-height: 1.65;
+        }
+
+        /* Footer */
         footer {
             background: #020617;
-            padding: 70px 20px 40px;
+            border-top: 1px solid var(--border);
+            padding: 40px 20px;
             text-align: center;
-            color: #94a3b8;
-            font-size: 1.05rem;
+            color: #64748b;
+            font-size: 0.95rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Animations */
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(28px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            header {
+                padding: 14px 5%;
+                flex-direction: column;
+                gap: 14px;
+            }
+
+            nav {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            nav a {
+                padding: 7px 14px;
+                font-size: 0.9rem;
+            }
+
+            .hero {
+                padding: 90px 20px 70px;
+            }
+
+            .hero p {
+                font-size: 1.15rem;
+            }
+
+            .btn {
+                padding: 16px 32px;
+                font-size: 1.1rem;
+            }
+
+            .section {
+                padding: 40px 20px 90px;
+            }
+
+            .card {
+                padding: 28px 22px;
+            }
         }
     </style>
 </head>
 <body>
-
     <header>
-        <h2 class="logo">FRIDAY AI</h2>
+        <div class="logo">FRIDAY AI</div>
         <nav>
             <a href="index.html">Home</a>
             <a href="about.html">Vision</a>
@@ -142,9 +314,11 @@
     </header>
 
     <section class="hero">
-        <h1>Intelligence That Works For You</h1>
-        <p>Fast, free, and genuinely helpful AI assistant.<br>
-        Built for real conversations, coding, learning, and daily productivity.</p>
+        <h1>Intelligence That<br>Works For You</h1>
+        <p>
+            Fast, free, and genuinely helpful AI assistant.<br>
+            Built for real conversations, coding, learning, and daily productivity.
+        </p>
         <a href="https://fridayaiavanu458.streamlit.app" target="_blank" class="btn">
             Try FRIDAY AI Now — 100% Free
         </a>
@@ -154,23 +328,28 @@
         <h2>Powerful. Simple. Yours.</h2>
         <div class="grid">
             <div class="card">
-                <h3>💬 Natural Conversations</h3>
-                <p>Talk like a human. Get thoughtful, accurate, and useful responses.</p>
+                <div class="icon">💬</div>
+                <h3>Natural Conversations</h3>
+                <p>Talk like a human. Get thoughtful, accurate, and useful responses every time.</p>
             </div>
             <div class="card">
-                <h3>💻 Smart Coding Partner</h3>
+                <div class="icon">💻</div>
+                <h3>Smart Coding Partner</h3>
                 <p>Write better code, fix bugs faster, and learn programming effectively.</p>
             </div>
             <div class="card">
-                <h3>🧠 Creative Brainstorming</h3>
+                <div class="icon">🧠</div>
+                <h3>Creative Brainstorming</h3>
                 <p>Generate ideas, plans, and solutions whenever you need them.</p>
             </div>
             <div class="card">
-                <h3>📚 Learn with Clarity</h3>
-                <p>Understand any topic faster with clear explanations.</p>
+                <div class="icon">📚</div>
+                <h3>Learn with Clarity</h3>
+                <p>Understand any topic faster with clear, structured explanations.</p>
             </div>
             <div class="card">
-                <h3>⚡ Daily Productivity</h3>
+                <div class="icon">⚡</div>
+                <h3>Daily Productivity</h3>
                 <p>Write, summarize, organize, and accomplish more in less time.</p>
             </div>
         </div>
@@ -179,6 +358,5 @@
     <footer>
         <p>Made by Shaurya Anjney © 2026 FRIDAY AI</p>
     </footer>
-
 </body>
 </html>
