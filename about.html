@@ -38,8 +38,8 @@
             top: -15%;
             left: 50%;
             transform: translateX(-50%);
-            width: 900px;
-            height: 600px;
+            width: 1000px;
+            height: 700px;
             background: radial-gradient(circle, var(--primary-glow) 0%, transparent 70%);
             pointer-events: none;
             z-index: 0;
@@ -101,17 +101,17 @@
         /* Hero */
         .hero {
             text-align: center;
-            padding: 120px 20px 80px;
+            padding: 130px 20px 90px;
             position: relative;
             z-index: 1;
         }
 
         .hero h1 {
-            font-size: clamp(2.7rem, 5.5vw, 3.7rem);
+            font-size: clamp(2.8rem, 6vw, 4rem);
             font-weight: 800;
-            letter-spacing: -2px;
-            margin-bottom: 20px;
-            background: linear-gradient(to bottom, #ffffff 30%, #94a3b8);
+            letter-spacing: -2.5px;
+            margin-bottom: 22px;
+            background: linear-gradient(to bottom, #ffffff 25%, #94a3b8);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -119,10 +119,10 @@
         }
 
         .hero p {
-            font-size: 1.25rem;
+            font-size: 1.3rem;
             color: var(--muted);
             max-width: 680px;
-            margin: 0 auto 40px;
+            margin: 0 auto 45px;
             line-height: 1.65;
             animation: fadeUp 0.8s ease-out 0.15s both;
         }
@@ -130,7 +130,7 @@
         .btn {
             display: inline-flex;
             align-items: center;
-            padding: 16px 38px;
+            padding: 17px 42px;
             background: linear-gradient(135deg, #3b82f6, #2563eb);
             color: white;
             font-size: 1.15rem;
@@ -147,29 +147,30 @@
             box-shadow: 0 20px 40px rgba(59, 130, 246, 0.45);
         }
 
-        /* Content Sections */
+        /* Content */
         .section {
-            padding: 70px 6%;
-            max-width: 900px;
+            padding: 80px 6%;
+            max-width: 1000px;
             margin: 0 auto;
-            text-align: center;
             position: relative;
             z-index: 1;
         }
 
-        .section h2 {
+        .section-title {
+            text-align: center;
             font-size: 1.9rem;
             font-weight: 800;
             letter-spacing: -0.8px;
-            margin-bottom: 22px;
+            margin-bottom: 20px;
             color: white;
         }
 
-        .section p {
-            font-size: 1.12rem;
+        .section-text {
+            text-align: center;
+            font-size: 1.15rem;
             color: var(--muted);
             max-width: 720px;
-            margin: 0 auto;
+            margin: 0 auto 20px;
             line-height: 1.75;
         }
 
@@ -178,20 +179,20 @@
             background: var(--card);
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(59, 130, 246, 0.15);
+            border: 1px solid rgba(59, 130, 246, 0.18);
             border-radius: 24px;
-            padding: 50px 45px;
-            margin: 40px auto;
+            padding: 50px 48px;
+            margin: 20px auto 60px;
             max-width: 860px;
             position: relative;
             overflow: hidden;
-            box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.4);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 25px 50px -15px rgba(0, 0, 0, 0.5);
+            transition: transform 0.35s ease, box-shadow 0.35s ease;
         }
 
         .highlight:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 25px 50px -12px rgba(59, 130, 246, 0.18);
+            transform: translateY(-8px);
+            box-shadow: 0 30px 60px -12px rgba(59, 130, 246, 0.2);
         }
 
         .highlight::before {
@@ -201,11 +202,104 @@
             left: 0;
             right: 0;
             height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.5), transparent);
+            background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.6), transparent);
         }
 
         .highlight h2 {
-            margin-bottom: 20px;
+            font-size: 1.7rem;
+            font-weight: 800;
+            margin-bottom: 18px;
+            text-align: center;
+        }
+
+        .highlight p {
+            font-size: 1.12rem;
+            color: var(--muted);
+            text-align: center;
+            line-height: 1.75;
+            max-width: 680px;
+            margin: 0 auto;
+        }
+
+        /* Values Grid */
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 24px;
+            margin-top: 50px;
+        }
+
+        .value-card {
+            background: var(--card);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(59, 130, 246, 0.12);
+            border-radius: 20px;
+            padding: 32px 28px;
+            text-align: center;
+            transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .value-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.4), transparent);
+        }
+
+        .value-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(59, 130, 246, 0.3);
+            box-shadow: 0 20px 40px -10px rgba(59, 130, 246, 0.15);
+        }
+
+        .value-card .icon {
+            font-size: 2rem;
+            margin-bottom: 16px;
+            display: block;
+        }
+
+        .value-card h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: white;
+        }
+
+        .value-card p {
+            font-size: 1rem;
+            color: var(--muted);
+            line-height: 1.6;
+        }
+
+        /* Final CTA */
+        .final-cta {
+            text-align: center;
+            padding: 90px 20px 100px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .final-cta h2 {
+            font-size: 2.1rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+            margin-bottom: 18px;
+            background: linear-gradient(to right, #f8fafc, #94a3b8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .final-cta p {
+            font-size: 1.15rem;
+            color: var(--muted);
+            max-width: 560px;
+            margin: 0 auto 35px;
         }
 
         /* Footer */
@@ -249,16 +343,20 @@
             }
 
             .hero {
-                padding: 90px 20px 60px;
+                padding: 100px 20px 70px;
             }
 
             .section {
-                padding: 50px 20px;
+                padding: 60px 20px;
             }
 
             .highlight {
                 padding: 36px 24px;
-                margin: 30px 20px;
+                margin: 20px 16px 40px;
+            }
+
+            .final-cta {
+                padding: 70px 20px 80px;
             }
         }
     </style>
@@ -275,6 +373,7 @@
         </nav>
     </header>
 
+    <!-- Hero -->
     <section class="hero">
         <h1>Our Vision</h1>
         <p>Making powerful AI simple, fast, and accessible to everyone — without complexity or barriers.</p>
@@ -283,15 +382,17 @@
         </a>
     </section>
 
+    <!-- Mission -->
     <section class="section">
-        <h2>🎯 Our Mission</h2>
-        <p>
+        <h2 class="section-title">🎯 Our Mission</h2>
+        <p class="section-text">
             We believe artificial intelligence should be a helpful everyday tool, not a complicated toy.
             FRIDAY AI was built to deliver fast, intelligent, and practical assistance to students, developers,
             professionals, and anyone who wants to get things done more efficiently.
         </p>
     </section>
 
+    <!-- What Makes Us Different -->
     <div class="highlight">
         <h2>🔥 What Makes Us Different</h2>
         <p>
@@ -301,22 +402,59 @@
         </p>
     </div>
 
+    <!-- Core Values -->
     <section class="section">
-        <h2>🚀 Real Purpose</h2>
-        <p>
+        <h2 class="section-title">What We Stand For</h2>
+        <p class="section-text" style="margin-bottom: 10px;">
+            These principles guide every decision we make while building FRIDAY AI.
+        </p>
+
+        <div class="values-grid">
+            <div class="value-card">
+                <span class="icon">⚡</span>
+                <h3>Speed First</h3>
+                <p>We obsess over fast responses so you never have to wait.</p>
+            </div>
+            <div class="value-card">
+                <span class="icon">✨</span>
+                <h3>Radical Simplicity</h3>
+                <p>Powerful AI should feel effortless, not overwhelming.</p>
+            </div>
+            <div class="value-card">
+                <span class="icon">🌍</span>
+                <h3>Accessible to All</h3>
+                <p>Great AI tools should be free and available to everyone.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Real Purpose -->
+    <section class="section" style="padding-top: 40px;">
+        <h2 class="section-title">🚀 Real Purpose</h2>
+        <p class="section-text">
             FRIDAY AI is designed for real-world use. Whether you want to understand a difficult topic,
-            write better code, brainstorm ideas for a project, improve your productivity, or just get quick
-            and honest answers — we built this AI to adapt to your needs.
+            write better code, brainstorm ideas, improve your productivity, or just get quick and honest answers —
+            we built this AI to adapt to your needs.
         </p>
     </section>
 
-    <section class="section">
-        <h2>🔮 Future Direction</h2>
-        <p>
+    <!-- Future -->
+    <section class="section" style="padding-top: 20px; padding-bottom: 40px;">
+        <h2 class="section-title">🔮 Future Direction</h2>
+        <p class="section-text">
             We are committed to continuously improving FRIDAY AI — making it smarter, faster, and more
             intuitive while keeping the experience simple. Our long-term goal is to become a dependable
             daily AI companion that millions of people can trust and rely on.
         </p>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-cta">
+        <h2>Ready to experience it?</h2>
+        <p>Join thousands of users already using FRIDAY AI every day.</p>
+        <a href="https://fridayaiavanu458.streamlit.app" target="_blank" class="btn">
+            Start Using FRIDAY AI — Free
+        </a>
     </section>
 
     <footer>
