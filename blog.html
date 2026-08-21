@@ -9,132 +9,295 @@
     <style>
         :root {
             --primary: #3b82f6;
-            --dark: #0f172a;
+            --primary-glow: rgba(59, 130, 246, 0.45);
+            --bg: #070b14;
+            --card: rgba(17, 24, 39, 0.7);
+            --border: rgba(148, 163, 184, 0.1);
+            --text: #f1f5f9;
+            --muted: #94a3b8;
         }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
-            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-            background: var(--dark);
-            color: white;
+            font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: var(--bg);
+            color: var(--text);
             line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
         }
-        
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: -15%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 900px;
+            height: 600px;
+            background: radial-gradient(circle, var(--primary-glow) 0%, transparent 70%);
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0.5;
+        }
+
         header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 24px 6%;
-            background: rgba(15, 23, 42, 0.98);
+            padding: 18px 6%;
+            background: rgba(7, 11, 20, 0.75);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border-bottom: 1px solid var(--border);
             position: sticky;
             top: 0;
             z-index: 100;
-            backdrop-filter: blur(16px);
         }
+
         .logo {
-            font-size: 2.25rem;
+            font-size: 1.7rem;
             font-weight: 800;
-            letter-spacing: -2px;
-            background: linear-gradient(90deg, #60a5fa, #3b82f6);
+            letter-spacing: -1.5px;
+            background: linear-gradient(135deg, #93c5fd, #3b82f6, #1d4ed8);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-decoration: none;
+            transition: opacity 0.25s ease;
         }
+
+        .logo:hover {
+            opacity: 0.85;
+        }
+
+        nav {
+            display: flex;
+            gap: 6px;
+        }
+
         nav a {
-            margin-left: 32px;
-            color: #cbd5f5;
+            color: var(--muted);
             text-decoration: none;
             font-weight: 500;
+            font-size: 0.95rem;
+            padding: 8px 18px;
+            border-radius: 999px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
-        nav a:hover { color: white; }
+
+        nav a:hover {
+            color: white;
+            background: rgba(59, 130, 246, 0.15);
+            box-shadow: 0 0 20px rgba(59, 130, 246, 0.15);
+        }
 
         .hero {
             text-align: center;
             padding: 110px 20px 70px;
-            background: linear-gradient(135deg, #1e2937 0%, #0f172a 100%);
+            position: relative;
+            z-index: 1;
         }
+
         .hero h1 {
-            font-size: 3.3rem;
+            font-size: clamp(2.6rem, 5.5vw, 3.6rem);
+            font-weight: 800;
+            letter-spacing: -2px;
             margin-bottom: 18px;
+            background: linear-gradient(to bottom, #ffffff 30%, #94a3b8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: fadeUp 0.8s ease-out;
         }
+
         .hero p {
-            font-size: 1.35rem;
-            color: #e2e8f0;
-            max-width: 720px;
-            margin: 0 auto 35px;
+            font-size: 1.2rem;
+            color: var(--muted);
+            max-width: 640px;
+            margin: 0 auto 40px;
+            line-height: 1.65;
+            animation: fadeUp 0.8s ease-out 0.15s both;
         }
+
         .btn {
-            display: inline-block;
-            padding: 17px 45px;
-            background: var(--primary);
+            display: inline-flex;
+            align-items: center;
+            padding: 16px 38px;
+            background: linear-gradient(135deg, #3b82f6, #2563eb);
             color: white;
-            font-size: 1.25rem;
+            font-size: 1.15rem;
             font-weight: 600;
             text-decoration: none;
-            border-radius: 60px;
-            transition: all 0.4s;
+            border-radius: 999px;
+            transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 10px 30px rgba(59, 130, 246, 0.35);
+            animation: fadeUp 0.8s ease-out 0.3s both;
         }
+
         .btn:hover {
-            background: #2563eb;
-            transform: translateY(-5px);
+            transform: translateY(-5px) scale(1.03);
+            box-shadow: 0 20px 40px rgba(59, 130, 246, 0.45);
         }
 
         .section {
-            padding: 80px 6%;
-            max-width: 1150px;
-            margin: auto;
+            padding: 40px 6% 110px;
+            max-width: 1100px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
         }
+
+        .section > h2 {
+            text-align: center;
+            font-size: clamp(1.8rem, 3.5vw, 2.3rem);
+            font-weight: 800;
+            letter-spacing: -1px;
+            margin-bottom: 50px;
+            background: linear-gradient(to right, #f8fafc, #94a3b8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
         .blog-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
-            gap: 35px;
-            margin-top: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 28px;
         }
+
         .blog-card {
-            background: #1e2937;
-            padding: 40px 32px;
+            background: var(--card);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(59, 130, 246, 0.12);
             border-radius: 20px;
-            transition: all 0.4s ease;
+            padding: 36px 30px;
+            transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
             height: 100%;
         }
+
+        .blog-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.4), transparent);
+        }
+
         .blog-card:hover {
-            transform: translateY(-12px);
-            background: #25344a;
+            transform: translateY(-10px);
+            border-color: rgba(59, 130, 246, 0.3);
+            box-shadow: 0 25px 50px -12px rgba(59, 130, 246, 0.18);
         }
+
         .blog-card h3 {
-            font-size: 1.55rem;
-            line-height: 1.35;
-            margin-bottom: 18px;
+            font-size: 1.35rem;
+            font-weight: 700;
+            line-height: 1.4;
+            margin-bottom: 16px;
+            color: white;
+            letter-spacing: -0.3px;
         }
+
         .blog-card p {
-            color: #cbd5f5;
-            margin-bottom: 22px;
-            font-size: 1.05rem;
+            color: var(--muted);
+            margin-bottom: 20px;
+            font-size: 1.02rem;
+            flex-grow: 1;
         }
+
         .date {
-            color: #94a3b8;
-            font-size: 0.95rem;
+            color: #64748b;
+            font-size: 0.9rem;
+            margin-bottom: 16px;
+            font-weight: 500;
         }
+
         .read-more {
-            color: var(--primary);
+            color: #93c5fd;
             text-decoration: none;
             font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.25s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
         }
+
         .read-more:hover {
-            text-decoration: underline;
+            color: #bfdbfe;
+            gap: 10px;
         }
 
         footer {
             background: #020617;
-            padding: 70px 20px 40px;
+            border-top: 1px solid var(--border);
+            padding: 40px 20px;
             text-align: center;
-            color: #94a3b8;
+            color: #64748b;
+            font-size: 0.95rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(24px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 14px 5%;
+                flex-direction: column;
+                gap: 14px;
+            }
+
+            nav {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            nav a {
+                padding: 7px 14px;
+                font-size: 0.9rem;
+            }
+
+            .hero {
+                padding: 80px 20px 50px;
+            }
+
+            .section {
+                padding: 20px 20px 80px;
+            }
+
+            .blog-card {
+                padding: 28px 22px;
+            }
         }
     </style>
 </head>
 <body>
-
     <header>
-        <h2 class="logo">FRIDAY AI</h2>
+        <a href="index.html" class="logo">FRIDAY AI</a>
+        
         <nav>
             <a href="index.html">Home</a>
             <a href="about.html">Vision</a>
@@ -152,10 +315,11 @@
     </section>
 
     <section class="section">
-        <h2 style="text-align:center; margin-bottom: 50px;">Latest Articles</h2>
-        
+        <h2>Latest Articles</h2>
+       
         <div class="blog-grid">
 
+            <!-- Article 1 -->
             <div class="blog-card">
                 <h3>How AI Assistants Like FRIDAY AI Are Transforming Work and Learning in 2026</h3>
                 <p>From students mastering difficult subjects to developers writing cleaner code faster — discover how accessible AI tools are changing productivity, creativity, and education in meaningful ways.</p>
@@ -163,6 +327,7 @@
                 <a href="#" class="read-more">Read Full Article →</a>
             </div>
 
+            <!-- Article 2 -->
             <div class="blog-card">
                 <h3>Why Simplicity Wins: The Philosophy Behind Building FRIDAY AI</h3>
                 <p>In a world full of overly complicated AI platforms, we chose a different path. Learn why we focused on speed, clarity, and ease of use instead of packing hundreds of features that most people never use.</p>
@@ -170,10 +335,35 @@
                 <a href="#" class="read-more">Read Full Article →</a>
             </div>
 
+            <!-- Article 3 -->
             <div class="blog-card">
                 <h3>Practical Ways to Use AI for Coding, Debugging & Learning Programming</h3>
                 <p>Whether you're a beginner or an experienced developer, FRIDAY AI can help you write better code, understand errors quickly, and accelerate your learning journey. Real examples and tips included.</p>
                 <p class="date">May 12, 2026</p>
+                <a href="#" class="read-more">Read Full Article →</a>
+            </div>
+
+            <!-- New Article 4 -->
+            <div class="blog-card">
+                <h3>5 Daily Habits That Make AI 10x More Useful</h3>
+                <p>Most people use AI randomly. These five simple habits will help you get consistently better answers, save hours every week, and turn FRIDAY AI into a real productivity partner.</p>
+                <p class="date">May 8, 2026</p>
+                <a href="#" class="read-more">Read Full Article →</a>
+            </div>
+
+            <!-- New Article 5 -->
+            <div class="blog-card">
+                <h3>How Students Are Using FRIDAY AI to Study Smarter (Not Harder)</h3>
+                <p>From summarizing long chapters to creating practice questions and explaining complex topics — see the exact methods students are using to learn faster and retain more.</p>
+                <p class="date">May 3, 2026</p>
+                <a href="#" class="read-more">Read Full Article →</a>
+            </div>
+
+            <!-- New Article 6 -->
+            <div class="blog-card">
+                <h3>The Future of Free AI: Why We Believe Access Matters</h3>
+                <p>Powerful AI shouldn’t be locked behind paywalls. In this article we share our vision for keeping FRIDAY AI free, fast, and available to everyone who wants to learn and create.</p>
+                <p class="date">April 28, 2026</p>
                 <a href="#" class="read-more">Read Full Article →</a>
             </div>
 
@@ -183,6 +373,5 @@
     <footer>
         <p>Made by Shaurya Anjney © 2026 FRIDAY AI</p>
     </footer>
-
 </body>
 </html>
